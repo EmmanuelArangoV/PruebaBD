@@ -124,6 +124,7 @@ The project includes a specialized endpoint to populate the databases from a CSV
 ## Project Structure
 ```text
 PruebaBD/
+├── api/                  # Postman Collection
 ├── data/                 # CSV data source
 ├── scripts/
 │   └── sql/              # SQL setup and upsert queries

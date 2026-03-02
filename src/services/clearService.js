@@ -1,5 +1,6 @@
 const { getClient } = require('../config/postgres');
-const CustomerHistory = require('../models/ProductAudit');
+const CustomerHistory = require('../models/CustomerHistory');
+const ProductAudit = require('../models/ProductAudit');
 
 const clearAll = async () => {
     const client = await getClient();
@@ -16,6 +17,7 @@ const clearAll = async () => {
         await client.query('DROP TABLE IF EXISTS customers');
 
         await CustomerHistory.deleteMany({});
+        await ProductAudit.deleteMany({});
 
         await client.query('COMMIT');
 
