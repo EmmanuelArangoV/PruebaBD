@@ -160,10 +160,10 @@ const upsertTransaction = async (client, row, customer) => {
     return result.rows[0].id;
 }
 
-const upsertTransactionDetails = async (client, row, transaction, product) => {
+const upsertTransactionDetails = async (client, row, transaction, productSupplierId) => {
     await client.query(SQL.upsertTransactionDetails, [
         transaction,
-        product,
+        productSupplierId,
         row.quantity,
         row.total_line_value
     ]);
@@ -176,5 +176,6 @@ module.exports = {
     upsertSupplier,
     upsertProductSupplier,
     upsertTransaction,
-    upsertTransactionDetails
+    upsertTransactionDetails,
+    upsertProduct
 };

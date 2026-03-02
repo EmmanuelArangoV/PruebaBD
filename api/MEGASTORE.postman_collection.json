@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "e1d669e6-a5e8-4f3b-9cfa-a8cb17052e77",
+		"name": "MEGASTORE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45069903"
+	},
+	"item": [
+		{
+			"name": "INITIAL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/simulacro",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"simulacro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SETUP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/simulacro/setup",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"simulacro",
+						"setup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MIGRACION",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/simulacro/migrate",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"simulacro",
+						"migrate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET PRODUCTS",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GET PRODUCT BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/products/PROD-001",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"PROD-001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NUEVO PRODUCTO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sku\": \"PROD-001\",\n    \"name\": \"Nuevo Producto\",\n    \"price\": 100.00,\n    \"category_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/products/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE PRODUCT",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "SUPPLIERS ANALYTICS",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "CLIENT HISTORY",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/analytics/customers/andres.lopez@gmail.com/history",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"analytics",
+						"customers",
+						"andres.lopez@gmail.com",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUCTS ANALYTICS",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": ""
+		}
+	]
+}
