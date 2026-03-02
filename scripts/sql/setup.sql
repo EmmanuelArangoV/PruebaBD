@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS products (
     id SERIAL PRIMARY KEY,
     product_sku VARCHAR(150) NOT NULL UNIQUE,
     product_name VARCHAR(150) NOT NULL,
-    product_price DECIMAL(10,2) NOT NULL,
+    product_price DECIMAL(10,2) NOT NULL CHECK (product_price > 0),
     product_category_id INT REFERENCES product_category(id)
 );
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS transaction_details (
     id SERIAL PRIMARY KEY,
     transaction_id INT REFERENCES transactions(id),
     product_id_supplier INT REFERENCES product_suppliers(id),
-    quantity INT NOT NULL,
+    quantity INT NOT NULL CHECK (quantity > 0),
     total_line_price DECIMAL(10,2) NOT NULL,
     CONSTRAINT transaction_details_unique UNIQUE (transaction_id, product_id_supplier)
 )
